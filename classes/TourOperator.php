@@ -6,95 +6,25 @@ class TourOperator
     private $id;
     private $name;
     private $link;
-    private $certificate;
-    private $destinations;
-    private $reviews;
-    private $scores;  
     
-    // public function __construct(array $data)
-    // {
-    //     $this->hydrate($data);
-    // }
-
-    /**
-     * Get the value of scores
-     */ 
-    public function getScores()
+    public function __construct(array $data)
     {
-        return $this->scores;
+        $this->hydrate($data);
     }
 
-    /**
-     * Set the value of scores
-     *
-     * @return  self
-     */ 
-    public function setScores($scores)
-    {
-        $this->scores = $scores;
+    public function hydrate(array $data){
+        if (isset($data['id'])) {
+            $this->setId($data['id']);
+        }
+        if (isset($data['name'])) {
+            $this->setName($data['name']);
+        }
+        if (isset($data['price'])) {
+            $this->setLink($data['link']);
+        }
+    } 
 
-        return $this;
-    }
-
-    /**
-     * Get the value of reviews
-     */ 
-    public function getReviews()
-    {
-        return $this->reviews;
-    }
-
-    /**
-     * Set the value of reviews
-     *
-     * @return  self
-     */ 
-    public function setReviews($reviews)
-    {
-        $this->reviews = $reviews;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of destinations
-     */ 
-    public function getDestinations()
-    {
-        return $this->destinations;
-    }
-
-    /**
-     * Set the value of destinations
-     *
-     * @return  self
-     */ 
-    public function setDestinations($destinations)
-    {
-        $this->destinations = $destinations;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of certificate
-     */ 
-    public function getCertificate()
-    {
-        return $this->certificate;
-    }
-
-    /**
-     * Set the value of certificate
-     *
-     * @return  self
-     */ 
-    public function setCertificate($certificate)
-    {
-        $this->certificate = $certificate;
-
-        return $this;
-    }
+  
 
     /**
      * Get the value of link
