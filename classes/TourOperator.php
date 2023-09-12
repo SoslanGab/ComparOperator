@@ -6,58 +6,25 @@ class TourOperator
     private $id;
     private $name;
     private $link;
-    private $destinations;
-    private $reviews;
     
-    
-    // public function __construct(array $data)
-    // {
-    //     $this->hydrate($data);
-    // }
-
-   
-
-    /**
-     * Get the value of reviews
-     */ 
-    public function getReviews()
+    public function __construct(array $data)
     {
-        return $this->reviews;
+        $this->hydrate($data);
     }
 
-    /**
-     * Set the value of reviews
-     *
-     * @return  self
-     */ 
-    public function setReviews($reviews)
-    {
-        $this->reviews = $reviews;
+    public function hydrate(array $data){
+        if (isset($data['id'])) {
+            $this->setId($data['id']);
+        }
+        if (isset($data['name'])) {
+            $this->setName($data['name']);
+        }
+        if (isset($data['price'])) {
+            $this->setLink($data['link']);
+        }
+    } 
 
-        return $this;
-    }
-
-    /**
-     * Get the value of destinations
-     */ 
-    public function getDestinations()
-    {
-        return $this->destinations;
-    }
-
-    /**
-     * Set the value of destinations
-     *
-     * @return  self
-     */ 
-    public function setDestinations($destinations)
-    {
-        $this->destinations = $destinations;
-
-        return $this;
-    }
-
-   
+  
 
     /**
      * Get the value of link
