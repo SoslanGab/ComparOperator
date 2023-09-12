@@ -1,21 +1,29 @@
 <?php
+require_once __DIR__ . '/../config/db.php';
+
+require_once __DIR__ . '/../config/autoload.php';
+
+$OperatorManager = new OperatorManager($db);
 
 
-if(isset($_POST['location']) && isset($_POST['price']) && isset($_POST['tour_operator'])) {
+// if(isset($_POST['location']) && isset($_POST['price']) && isset($_POST['tour_operator'])) {
 
-    $location = $_POST['location'];
-    $price = intval($_POST['price']);
-    $tour_operator = $_POST['tour_operator'];
+//     $location = $_POST['location'];
+//     $price = intval($_POST['price']);
+//     $tour_operator = $_POST['tour_operator'];
   
-    $result = $d->addDestination($location, $price, $tour_operator);
+//     $result = $d->addDestination($location, $price, $tour_operator);
     
-    if($result) {
-      echo "Destination ajouté"; 
-    }
-  }
+//     if($result) {
+//       echo "Destination ajouté"; 
+//     }
+//   }
+  
+  
 
+  $operators = $OperatorManager->findOperator();
 
-
+var_dump ($operators);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,12 +53,18 @@ if(isset($_POST['location']) && isset($_POST['price']) && isset($_POST['tour_ope
             </div>
 
             <div class="form-group">
-            <label for="gender">Tour Operator:</label>
-            <select class="form-control" id="gender" name="tour_operator">
-                <option value="homme">Homme</option>
-                <option value="femme">Femme</option>  
-            </select>
+                <label for="gender">Tour Operator:</label>
+                <select class="form-control" id="gender" name="tour_operator">
+                    <?php
+                    foreach ($operators as $operator) {
+                        echo '<option value="' . $operator->getName() . '">' . $operator->getName() . '</option>';
+                    }
+                    ?>
+                </select>
             </div>
+
+
+
             <br>
             <button type="submit" class="btn btn-primary">Ajouter</button>
         </form>

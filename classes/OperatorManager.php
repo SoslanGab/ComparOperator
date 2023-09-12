@@ -21,8 +21,8 @@ class OperatorManager
         $req->execute();
         $operatorArray = $req->fetchAll(PDO::FETCH_ASSOC);        
         $operators = [];
-        foreach ($operatorArray as $operators) {
-            $operators[] = new TourOperator($operators);
+        foreach ($operatorArray as $operatorsData) {
+            $operators[] = new TourOperator($operatorsData);
         }
         return $operators;
     }

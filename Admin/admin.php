@@ -41,16 +41,15 @@ $destinations = $DestinationManager->findDestination();
 </nav>
 
 
-
 <main class="container mt-5">
     <div class="d-flex flex-wrap">
         <?php foreach ($destinations as $destination) { ?>
             <div class="card m-2" style="width: 18rem;">
                 <img src="" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title"><?= $destination->getLocation() ?></h5>
+                    <h5 class="card-title"><?= $destination->getLocation()?></h5>
                     <p class="card-text">
-                        PV : <?= $destination->getPrice() ?>
+                        Prix : <?= $destination->getPrice() ?>
                     </p>
                     <a href="./fight.php?hero_id=<?=$destination->getId()?>" class="btn btn-primary">Selectionner</a>
                 </div>

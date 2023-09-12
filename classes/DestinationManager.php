@@ -15,8 +15,8 @@ class DestinationManager
     public function addDestination($location, $price)
     {
         $req = $this->db->prepare("INSERT INTO destination(location, price) VALUES (:location, :price)");
-        $req->bindValue(':name', $location);
-        $req->bindValue(':gender', $price);
+        $req->bindValue(':location', $location);
+        $req->bindValue(':price', $price);
         $req->execute();
     }
 
@@ -26,9 +26,9 @@ class DestinationManager
         $req->execute();
         $destinationArray = $req->fetchAll(PDO::FETCH_ASSOC);        
         $destinations = [];
-        foreach ($destinationArray as $destinations) {
-            $destinations[] = new TourOperator($destinations);
-        }
+        foreach ($destinationArray as $destinationData) {
+            $destinations[] = new Destination($destinationData);
+        }        
         return $destinations;
     }
 
