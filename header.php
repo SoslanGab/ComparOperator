@@ -44,7 +44,7 @@
             <div class="row gx-0">
                 <div class="col-lg-3 bg-dark d-none d-lg-block">
                     <a href="index.html" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
-                        <h1 class="m-0 text-primary text-uppercase">Hotelier</h1>
+                        <h1 class="m-0 text-primary text-uppercase">tour operator</h1>
                     </a>
                 </div>
                 <div class="col-lg-9">
@@ -79,8 +79,8 @@
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav mr-auto py-0">
                                 <a href="index.html" class="nav-item nav-link active">Home</a>
-                                <a href="about.html" class="nav-item nav-link">About</a>
-                                <a href="service.html" class="nav-item nav-link">Services</a>
+                                <a href="about.html" class="nav-item nav-link">A propos</a>
+                                <a href="service.html" class="nav-item nav-link">Destination</a>
                                 <a href="room.html" class="nav-item nav-link">Rooms</a>
                                 <div class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
