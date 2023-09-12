@@ -43,8 +43,8 @@
       <div class="container-fluid bg-dark px-0">
             <div class="row gx-0">
                 <div class="col-lg-3 bg-dark d-none d-lg-block">
-                    <a href="index.html" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
-                        <h1 class="m-0 text-primary text-uppercase">tour operator</h1>
+                    <a href="index.php" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-left">
+                        <img src="img\craiyon_114428_a_plane_for_a_logo-removebg-preview.png" alt="logo" width="200px" height="120px">
                     </a>
                 </div>
                 <div class="col-lg-9">
@@ -78,21 +78,21 @@
                         </button>
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav mr-auto py-0">
-                                <a href="index.html" class="nav-item nav-link active">Home</a>
+                                <a href="index.html" class="nav-item nav-link active">Accueil</a>
                                 <a href="about.html" class="nav-item nav-link">A propos</a>
                                 <a href="service.html" class="nav-item nav-link">Destination</a>
-                                <a href="room.html" class="nav-item nav-link">Rooms</a>
+                                <a href="room.html" class="nav-item nav-link">Voyages</a>
                                 <div class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                                     <div class="dropdown-menu rounded-0 m-0">
-                                        <a href="booking.html" class="dropdown-item">Booking</a>
-                                        <a href="team.html" class="dropdown-item">Our Team</a>
+                                        <a href="booking.html" class="dropdown-item">Réserver</a>
+                                        <a href="team.html" class="dropdown-item">Notre Equipe</a>
                                         <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                                     </div>
                                 </div>
                                 <a href="contact.html" class="nav-item nav-link">Contact</a>
                             </div>
-                            <a href="https://htmlcodex.com/hotel-html-template-pro" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Premium Version<i class="fa fa-arrow-right ms-3"></i></a>
+                            <a href="" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Tour Operateur Premium<i class="fa fa-arrow-right ms-3"></i></a>
                         </div>
                     </nav>
                 </div>

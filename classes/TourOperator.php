@@ -6,35 +6,16 @@ class TourOperator
     private $id;
     private $name;
     private $link;
-    private $certificate;
     private $destinations;
     private $reviews;
-    private $scores;  
+    
     
     // public function __construct(array $data)
     // {
     //     $this->hydrate($data);
     // }
 
-    /**
-     * Get the value of scores
-     */ 
-    public function getScores()
-    {
-        return $this->scores;
-    }
-
-    /**
-     * Set the value of scores
-     *
-     * @return  self
-     */ 
-    public function setScores($scores)
-    {
-        $this->scores = $scores;
-
-        return $this;
-    }
+   
 
     /**
      * Get the value of reviews
@@ -76,25 +57,7 @@ class TourOperator
         return $this;
     }
 
-    /**
-     * Get the value of certificate
-     */ 
-    public function getCertificate()
-    {
-        return $this->certificate;
-    }
-
-    /**
-     * Set the value of certificate
-     *
-     * @return  self
-     */ 
-    public function setCertificate($certificate)
-    {
-        $this->certificate = $certificate;
-
-        return $this;
-    }
+   
 
     /**
      * Get the value of link
