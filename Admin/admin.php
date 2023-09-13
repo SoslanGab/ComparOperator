@@ -4,6 +4,8 @@ session_start();
 if(!isset($_SESSION["username"])){
   header("Location: login.php");
   exit;
+}else{
+  echo '<span style="color: green;">Bienvenue ' . $_SESSION["username"] . '</span>';
 }
 
 require_once __DIR__ . '/../config/db.php';
@@ -38,7 +40,7 @@ $destinations = $DestinationManager->findDestination();
         <a class="nav-link" href="destination.php">Creer destination</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"></a>
+        <a class="nav-link" href="tour-operator.php">Creer Tour operator</a>
       </li>
       <li class="nav-item">
       </li>
