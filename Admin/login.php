@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
     <title>Connexion à l'administration</title>
 </head>
 <body>
+    
     <h1>Connexion à l'administration</h1>
     <form action="login_process.php" method="post">
         <div>
