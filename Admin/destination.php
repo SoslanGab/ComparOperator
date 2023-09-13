@@ -3,25 +3,31 @@ require_once __DIR__ . '/../config/db.php';
 
 require_once __DIR__ . '/../config/autoload.php';
 
-$OperatorManager = new OperatorManager($db);
+$operatorManager = new OperatorManager($db);
+$destinationManager = new DestinationManager($db);
 
 
-// if(isset($_POST['location']) && isset($_POST['price']) && isset($_POST['tour_operator'])) {
 
-//     $location = $_POST['location'];
-//     $price = intval($_POST['price']);
-//     $tour_operator = $_POST['tour_operator'];
+if (isset($_POST['location']) && isset($_POST['price']) && isset($_POST['tour_operator'])) {
+    $location = $_POST['location'];
+    $price = $_POST['price'];
+    $tourOperatorId = intval($_POST['tour_operator']);
+
+    $destination = new Destination(['location' => $location, 'price' => $price, 'tour_operator_id' => $tourOperatorId]);
+
+    $destinationManager->addDestination($location, $price, $tourOperatorId);
+
+    if ($destinationManager) {
+        echo "Destination ajoutée";
+    }
+}
+
+
+
+
   
-//     $result = $d->addDestination($location, $price, $tour_operator);
-    
-//     if($result) {
-//       echo "Destination ajouté"; 
-//     }
-//   }
-  
-  
 
-  $operators = $OperatorManager->findOperator();
+  $operators = $operatorManager->findOperator();
 
 var_dump ($operators);
 ?>
@@ -51,20 +57,17 @@ var_dump ($operators);
             <label for="age">Price:</label>
             <input type="number" class="form-control" id="age" name="price">
             </div>
-
+            <input type="hidden" name="tour_operator_id" value="<?php echo $tourOperatorId; ?>">
             <div class="form-group">
                 <label for="gender">Tour Operator:</label>
                 <select class="form-control" id="gender" name="tour_operator">
                     <?php
                     foreach ($operators as $operator) {
-                        echo '<option value="' . $operator->getName() . '">' . $operator->getName() . '</option>';
+                        echo '<option value="' . $operator->getID() . '">' . $operator->getName() . '</option>';
                     }
                     ?>
                 </select>
             </div>
-
-
-
             <br>
             <button type="submit" class="btn btn-primary">Ajouter</button>
         </form>

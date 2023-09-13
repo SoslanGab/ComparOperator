@@ -12,13 +12,15 @@ class DestinationManager
         $this->db = $db;
     }
 
-    public function addDestination($location, $price)
+    public function addDestination($location, $price, $tourOperatorId)
     {
-        $req = $this->db->prepare("INSERT INTO destination(location, price) VALUES (:location, :price)");
+        $req = $this->db->prepare("INSERT INTO destination(location, price, tour_operator_id) VALUES (:location, :price, :tour_operator_id)");
         $req->bindValue(':location', $location);
         $req->bindValue(':price', $price);
+        $req->bindValue(':tour_operator_id', $tourOperatorId); 
         $req->execute();
     }
+    
 
     public function findDestination()
     {
