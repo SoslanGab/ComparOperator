@@ -41,10 +41,10 @@ $destinations = $DestinationManager->findDestination();
         <a class="nav-link" href="#"></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#"></a>
       </li>
     </ul>
   </div>
+  <a href="logout.php" class="btn btn-danger m-2 ">Se déconnecter</a>
 </nav>
 
 
