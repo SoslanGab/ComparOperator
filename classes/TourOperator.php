@@ -19,7 +19,7 @@ class TourOperator
         if (isset($data['name'])) {
             $this->setName($data['name']);
         }
-        if (isset($data['price'])) {
+        if (isset($data['link'])) {
             $this->setLink($data['link']);
         }
     } 

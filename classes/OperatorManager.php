@@ -13,7 +13,13 @@ class OperatorManager
     {
         $this->db = $db;
     }
-
+    public function addOperator($name, $link)
+    {
+        $req = $this->db->prepare("INSERT INTO tour_operator(name, link) VALUES (:name, :link)");
+        $req->bindValue(':name', $name);
+        $req->bindValue(':link', $link);
+        $req->execute();
+    }
 
     public function findOperator()
     {
