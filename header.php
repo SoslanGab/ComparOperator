@@ -30,6 +30,7 @@
     <!-- Template Stylesheet -->
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
+<style type="text/css">body {cursor:url(http://sd-1.archive-host.com/membres/up/103617246114893015/curseur/locomotion/avion/curseur-avion-6.cur),auto;}</style><a href="http://gifs-et-compagnie.over-blog.com/"</a> 
 <body>
 
 <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">

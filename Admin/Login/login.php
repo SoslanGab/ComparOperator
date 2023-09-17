@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Customized Bootstrap Stylesheet -->
-        <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
     
     <title>Page de Connexion</title>
 </head>

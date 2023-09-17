@@ -2,7 +2,7 @@
 session_start();
 
 if(!isset($_SESSION["username"])){
-  header("Location: login.php");
+  header("Location: Login/login.php");
   exit;
 }else{
   echo '<span style="color: green;">Bienvenue ' . $_SESSION["username"] . '</span>';
@@ -43,10 +43,13 @@ $destinations = $DestinationManager->findDestination();
         <a class="nav-link" href="tour-operator.php">Creer Tour operator</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="les-avis.php">Les avis</a>
+      </li>
+      <li class="nav-item">
       </li>
     </ul>
   </div>
-  <a href="logout.php" class="btn btn-danger m-2 ">Se déconnecter</a>
+  <a href="Login/logout.php" class="btn btn-danger m-2 ">Se déconnecter</a>
 </nav>
 
 
