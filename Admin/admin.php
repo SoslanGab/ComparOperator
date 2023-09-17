@@ -43,7 +43,7 @@ $destinations = $DestinationManager->findDestination();
         <a class="nav-link" href="tour-operator.php">Creer Tour operator</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="les-avis.php">Les avis</a>
+        <a class="nav-link" href="Avis/les-avis.php">Les avis</a>
       </li>
       <li class="nav-item">
       </li>
