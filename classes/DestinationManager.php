@@ -33,7 +33,7 @@ class DestinationManager
         }        
         return $destinations;
     }
-
+    
 
 
 

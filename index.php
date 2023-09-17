@@ -4,8 +4,10 @@ require_once 'config/db.php';
 include 'header.php';
 
 
-
+$reviewManager = new ReviewManager($db);
+$reviews = $reviewManager->getAllReviews();
 $operatorManager = new OperatorManager($db);
+$operators = $operatorManager->findOperator();
 $destinationManager = new DestinationManager($db);
 
 $destinations = $destinationManager->findDestination();
@@ -33,8 +35,7 @@ $destinations = $destinationManager->findDestination();
                             <div class="p-3" style="max-width: 700px;">
                                 <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">NOTE ETOILE</h6>
                                 <h1 class="display-3 text-white mb-4 animated slideInDown">Découvrez nos voyages du moment</h1>
-                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Voir la présentation</a>
-                                <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Réserver votre voyage</a>
+                                <a href="#voyage" class="btn btn-primary py-md-3 px-md-5 animated slideInRight">Réserver votre voyage</a>
                             </div>
                         </div>
                     </div>
@@ -44,8 +45,7 @@ $destinations = $destinationManager->findDestination();
                             <div class="p-3" style="max-width: 700px;">
                                 <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">NOTE ETOILE</h6>
                                 <h1 class="display-3 text-white mb-4 animated slideInDown">Découvrez nos voyages du moment</h1>
-                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Voir la présentation</a>
-                                <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Réserver votre voyage</a>
+                                <a href="#voyage" class="btn btn-primary py-md-3 px-md-5 animated slideInRight">Réserver votre voyage</a>
                             </div>
                         </div>
                     </div>
@@ -125,74 +125,47 @@ $destinations = $destinationManager->findDestination();
         <!-- About End -->
 
 
-        <!-- Room Start -->
+        <!-- voyage Start -->
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <h6 class="section-title text-center text-primary text-uppercase">Nos voyages</h6>
-                    <h1 class="mb-5">Explorer nos <span class="text-primary text-uppercase">voyage</span></h1>
+                    <h1 class="mb-5">Explorer nos <span class="text-primary text-uppercase">voyages</span></h1>
                 </div>
-                <div class="row g-4">
-                <?php foreach ($destinations as $destination) { ?>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="room-item shadow rounded overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/room-1.jpg" alt="">
-                                <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4"><?= $destination->getPrice()?>$</small>
-                            </div>
-                            <div class="p-4 mt-2">
-                                <div class="d-flex justify-content-between mb-3">
-                                    <h5 class="mb-0"><?= $destination->getLocation()?></h5>
-                                    <div class="ps-2">
-                                        <small class="fa fa-star text-primary"></small>
-                                        <small class="fa fa-star text-primary"></small>
-                                        <small class="fa fa-star text-primary"></small>
-                                        <small class="fa fa-star text-primary"></small>
-                                        <small class="fa fa-star text-primary"></small>
+                <div id="voyage" class="row g-4">
+                     <?php //var_dump($destinations); ?> 
+                        <?php  foreach ($destinations as $destination) { ?>
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="room-item shadow rounded overflow-hidden">
+                                    <div class="position-relative">
+                                        <img class="img-fluid" src="img/room-1.jpg" alt="">
+                                        <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4"><?= $destination->getPrice()?>$</small>
+                                    </div>
+                                    <div class="p-4 mt-2">
+                                        <div class="d-flex justify-content-between mb-3">
+                                            <h5 class="mb-0"><?= $destination->getLocation()?></h5>
+                                            <div class="ps-2">
+                                                <small class="fa fa-star text-primary"></small>
+                                                <small class="fa fa-star text-primary"></small>
+                                                <small class="fa fa-star text-primary"></small>
+                                                <small class="fa fa-star text-primary"></small>
+                                                <small class="fa fa-star text-primary"></small>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">Voir détails</a>
+                                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="<?php //$destination->getLink()?>">Réserver maintenant</a>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="d-flex mb-3">
-                                    <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                                    <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
-                                    <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
-                                </div>
-                                <p class="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
-                                <div class="d-flex justify-content-between">
-                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">Voir détails</a>
-                                    <a class="btn btn-sm btn-dark rounded py-2 px-4" href="">Réserver maintenant</a>
-                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <?php } ?>
+                        <?php } ?>
                 </div>
             </div>
         </div>
-        <!-- Room End -->
+        <!-- Voyage End -->
 
-
-        <!-- Video Start -->
-        <div class="container-xxl py-5 px-0 wow zoomIn" data-wow-delay="0.1s">
-            <div class="row g-0">
-                <div class="col-md-6 bg-dark d-flex align-items-center">
-                    <div class="p-5">
-                        <h6 class="section-title text-start text-white text-uppercase mb-3">Luxury Living</h6>
-                        <h1 class="text-white mb-4">Discover A Brand Luxurious Hotel</h1>
-                        <p class="text-white mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                        <a href="" class="btn btn-primary py-md-3 px-md-5 me-3">Nos voyages</a>
-                        <a href="" class="btn btn-light py-md-3 px-md-5">Reserver un voyage</a>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="video">
-                        <button type="button" class="btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/watch?v=Lx9saiNPhps" data-bs-target="#videoModal">
-                            <span></span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+                            
         <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content rounded-0">
@@ -214,136 +187,53 @@ $destinations = $destinationManager->findDestination();
 
 
 
-        <!-- Testimonial Start -->
-        <div class="container-xxl testimonial my-5 py-5 bg-dark wow zoomIn" data-wow-delay="0.1s">
+       <!-- Testimonial Start -->
+       <div class="container-xxl testimonial mt-5 py-5 bg-dark wow zoomIn" data-wow-delay="0.1s" style="margin-bottom: 90px;">
+            <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <h3 class="section-title text-center text-primary text-uppercase">avis</h3>
                 </div>
+                <?php $count = 0; // Initialiser un compteur ?>
+                <?php foreach ($reviews as $review) { ?>
+                    <?php if ($count < 3) { // Limitez le nombre d'avis à 3 ?>
+                        <div class="owl-carousel testimonial-carousel py-5">
+                            <div class="testimonial-item position-relative bg-white rounded overflow-hidden">
+                                <p><?php echo $review->getMessage() ?></p>
+                                <div class="d-flex align-items-center">
+                                    <div class="ps-3">
+                                        <h6 class="fw-bold mb-1"><?php echo $review->getAuthor() ?></h6>
+                                        <small>
+                                            <?php
+                                            $operatorId = $review->getTour_operator_id();
+                                            foreach ($operators as $operator) {
+                                                if ($operator->getID() === $operatorId) {
+                                                    echo 'Voyagiste : ' . $operator->getName();
+                                                    break;
+                                                }
+                                            }
+                                            ?>
+                                        </small>
+                                    </div>
+                                </div>
+                                <i class="fa fa-quote-right fa-3x text-primary position-absolute end-0 bottom-0 me-4 mb-n1"></i>
+                            </div>
+                        </div>
+                        <?php $count++; // Incrémentez le compteur ?>
+                    <?php } ?>
+                <?php } ?>
+            </div>
             <div class="container">
-                <div class="owl-carousel testimonial-carousel py-5">
-                    <div class="testimonial-item position-relative bg-white rounded overflow-hidden">
-                        <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd et erat magna eos</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded" src="img/testimonial-1.jpg" style="width: 45px; height: 45px;">
-                            <div class="ps-3">
-                                <h6 class="fw-bold mb-1">Client Name</h6>
-                                <small>Profession</small>
-                            </div>
-                        </div>
-                        <i class="fa fa-quote-right fa-3x text-primary position-absolute end-0 bottom-0 me-4 mb-n1"></i>
+                <div class="row">
+                    <div class="col-6">
+                        <a href="ajouteravis.php" class="btn btn-primary py-md-3   d-flex justify-content-center animated ">Ajouter un Avis</a>
                     </div>
-                    <div class="testimonial-item position-relative bg-white rounded overflow-hidden">
-                        <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd et erat magna eos</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded" src="img/testimonial-2.jpg" style="width: 45px; height: 45px;">
-                            <div class="ps-3">
-                                <h6 class="fw-bold mb-1">Client Name</h6>
-                                <small>Profession</small>
-                            </div>
-                        </div>
-                        <i class="fa fa-quote-right fa-3x text-primary position-absolute end-0 bottom-0 me-4 mb-n1"></i>
-                    </div>
-                    <div class="testimonial-item position-relative bg-white rounded overflow-hidden">
-                        <p>Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd et erat magna eos</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded" src="img/testimonial-3.jpg" style="width: 45px; height: 45px;">
-                            <div class="ps-3">
-                                <h6 class="fw-bold mb-1">Client Name</h6>
-                                <small>Profession</small>
-                            </div>
-                        </div>
-                        <i class="fa fa-quote-right fa-3x text-primary position-absolute end-0 bottom-0 me-4 mb-n1"></i>
+                    <div class="col-6">
+                        <a href="avis.php" class="btn btn-primary py-md-3   d-flex justify-content-center animated ">Voir tout les avis</a>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Testimonial End -->
 
-
-        <!-- Team Start -->
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h6 class="section-title text-center text-primary text-uppercase">Our Team</h6>
-                    <h1 class="mb-5">Explore Our <span class="text-primary text-uppercase">Staffs</span></h1>
-                </div>
-                <div class="row g-4">
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="rounded shadow overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/team-1.jpg" alt="">
-                                <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="text-center p-4 mt-3">
-                                <h5 class="fw-bold mb-0">Full Name</h5>
-                                <small>Designation</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="rounded shadow overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/team-2.jpg" alt="">
-                                <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="text-center p-4 mt-3">
-                                <h5 class="fw-bold mb-0">Full Name</h5>
-                                <small>Designation</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="rounded shadow overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/team-3.jpg" alt="">
-                                <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="text-center p-4 mt-3">
-                                <h5 class="fw-bold mb-0">Full Name</h5>
-                                <small>Designation</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="rounded shadow overflow-hidden">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/team-4.jpg" alt="">
-                                <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="text-center p-4 mt-3">
-                                <h5 class="fw-bold mb-0">Full Name</h5>
-                                <small>Designation</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Team End -->
-        
-
-   
-
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-    </div>
 
 <?php include 'footer.php'; ?>
 </body>

@@ -53,11 +53,11 @@
                         <div class="col-lg-7 px-5 text-start">
                             <div class="h-100 d-inline-flex align-items-center py-2 me-4">
                                 <i class="fa fa-envelope text-primary me-2"></i>
-                                <p class="mb-0">info@example.com</p>
+                                <p class="mb-0">hamza404@g404.com</p>
                             </div>
                             <div class="h-100 d-inline-flex align-items-center py-2">
                                 <i class="fa fa-phone-alt text-primary me-2"></i>
-                                <p class="mb-0">+012 345 6789</p>
+                                <p class="mb-0">04 58 59 25 14</p>
                             </div>
                         </div>
                         <div class="col-lg-5 px-5 text-end">
@@ -79,19 +79,11 @@
                         </button>
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav mr-auto py-0">
-                                <a href="index.html" class="nav-item nav-link active">Accueil</a>
-                                <a href="about.html" class="nav-item nav-link">A propos</a>
-                                <a href="service.html" class="nav-item nav-link">Destination</a>
-                                <a href="room.html" class="nav-item nav-link">Voyages</a>
-                                <div class="nav-item dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                                    <div class="dropdown-menu rounded-0 m-0">
-                                        <a href="booking.html" class="dropdown-item">Réserver</a>
-                                        <a href="team.html" class="dropdown-item">Notre Equipe</a>
-                                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                    </div>
-                                </div>
-                                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                                <a href="index..php" class="nav-item nav-link active">Accueil</a>
+                                <a href="avis.php" class="nav-item nav-link">avis</a>
+                                <!-- <a href="" class="nav-item nav-link">Destination</a> -->
+                                <!-- <a href="" class="nav-item nav-link">Voyages</a> -->
+                                <a href="contact.php" class="nav-item nav-link">Contact</a>
                             </div>
                             <a href="" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Tour Operateur Premium<i class="fa fa-arrow-right ms-3"></i></a>
                         </div>

@@ -46,6 +46,9 @@ $destinations = $DestinationManager->findDestination();
         <a class="nav-link" href="Avis/les-avis.php">Les avis</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="../index.php">Coté utilisateur</a>
+      </li>
+      <li class="nav-item">
       </li>
     </ul>
   </div>
